@@ -1,0 +1,32 @@
+.sidebar-container {
+  background-color: rgba(51, 56, 62, 1);
+  width: 270px;
+  font-size: 16px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.avatar {
+  width: 130px;
+  height: 100px;
+  border-radius: 50%;
+}
+.sidebar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 210px;
+  background-repeat: no-repeat;
+}
+.sidebar-categories {
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+}
+
+.sidebar-categories:hover {
+  color: red;
+}

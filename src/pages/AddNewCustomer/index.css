@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-controller {
+  width: 200px;
+}
+input {
+  height: 30px;
+  width: 350px;
+  margin: 15px;
+}

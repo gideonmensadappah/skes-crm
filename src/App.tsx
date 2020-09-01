@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SideBar from "./pages/Sidebar/index";
+import Header from "./header";
+import Customers from "./pages/Customers/index";
+import AddNewCustomer from "./pages/AddNewCustomer/index";
+import Reports from "./pages/Reports/index";
+import "./App.css";
 
-function App() {
+const App: React.FC<{}> = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Router>
+        <Content />
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
+
+const Content = () => {
+  return (
+    <div className="container">
+      <SideBar />
+      <Routes />
+    </div>
+  );
+};
+const Routes: React.FC = () => {
+  return (
+    <div className="pages-container">
+      <Switch>
+        <Route path="/customers" component={Customers} />
+        <Route path="/add-customer" component={AddNewCustomer} />
+        <Route path="/reports" component={Reports} />
+      </Switch>
+    </div>
+  );
+};
